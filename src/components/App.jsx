@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 import ContactForm from "./ContactForm/ContactForm";
-// import Filter from "./Filter/Filter";
+import Filter from "./Filter/Filter";
 import ContactList from "./ContactList/ContactList";
 // import { nanoid } from 'nanoid';
 import { Contacts } from './App.styled';
@@ -12,7 +12,7 @@ export const App = () => {
   <ContactForm/>
 
   <h2>Contacts</h2>
-  {/* <Filter/> */}
+  <Filter/>
 
   <ContactList/>
 </Contacts>
