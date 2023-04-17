@@ -3,12 +3,13 @@ import { nanoid } from 'nanoid';
 import {Formik, ErrorMessage } from 'formik';
 import {Form, Button} from './ContactForm.styled';
 
-import { addContact } from "../../redux/contactsSlice";
+import { addContact, resetInput } from "../../redux/contactsSlice";
 
 export default function ContactForm() {
   const contacts = useSelector( state => state.phonebook.contacts)
 
   const dispatch = useDispatch();
+
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
@@ -29,7 +30,9 @@ export default function ContactForm() {
     }
 
     dispatch(addContact(contact));
-    form.reset();
+    dispatch(resetInput());
+    // form.reset()
+    
   };
   return (
     <Formik >
