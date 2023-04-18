@@ -6,15 +6,13 @@ export const contactsSlice = createSlice({
   name: 'phonebook',
   initialState: {
     contacts: [],
-    input:''
+    
   },
   reducers: {
     addContact(state, action) {
       state.contacts.push(action.payload);
     },
-    resetInput(state) {
-      state.input = '';
-    },
+  
     deleteContact(state, action) {
       state.contacts = state.contacts.filter(
         contact => contact.id !== action.payload
@@ -36,4 +34,4 @@ export const contactsReducer = persistReducer(
 
 
 
-export const { addContact, deleteContact, resetInput } = contactsSlice.actions;
+export const { addContact, deleteContact,  } = contactsSlice.actions;
